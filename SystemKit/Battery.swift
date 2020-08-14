@@ -106,10 +106,10 @@ public struct Battery {
     */
     public mutating func open() -> kern_return_t {
         if (service != 0) {
-            #if DEBUG
-                print("WARNING - \(#file):\(#function) - " +
-                        "\(Battery.IOSERVICE_BATTERY) connection already open")
-            #endif
+//            #if DEBUG
+//                print("WARNING - \(#file):\(#function) - " +
+//                        "\(Battery.IOSERVICE_BATTERY) connection already open")
+//            #endif
             return kIOReturnStillOpen
         }
         
@@ -119,10 +119,10 @@ public struct Battery {
                   IOServiceNameMatching(Battery.IOSERVICE_BATTERY))
         
         if (service == 0) {
-            #if DEBUG
-                print("ERROR - \(#file):\(#function) - " +
-                        "\(Battery.IOSERVICE_BATTERY) service not found")
-            #endif
+//            #if DEBUG
+//                print("ERROR - \(#file):\(#function) - " +
+//                        "\(Battery.IOSERVICE_BATTERY) service not found")
+//            #endif
             return kIOReturnNotFound
         }
         
